@@ -11,5 +11,10 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 eval "$(starship init zsh)"
 
-alias zed='zeditor'
 alias update='sudo pacman -Syyu --noconfirm && yay -Syyu --noconfirm && sudo paccache -rk1 && yay -Sc --noconfirm && yay -Yc --noconfirm && sudo rm -rf /var/cache/pacman/pkg/download-*'
+alias zed='zeditor'
+alias code='zeditor'
+alias resume='zed /home/naya/resume'
+
+# bun completions
+[ -s "/home/naya/.bun/_bun" ] && source "/home/naya/.bun/_bun"
