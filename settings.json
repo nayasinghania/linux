@@ -1,0 +1,63 @@
+{
+  "cli_default_open_behavior": "new_window",
+  "toolbar": {
+    "quick_actions": false,
+    "breadcrumbs": false
+  },
+  "soft_wrap": "bounded",
+  "icon_theme": "Catppuccin Mocha",
+  "theme": "Catppuccin Mocha",
+  "debugger": {
+    "button": false,
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "outline_panel": {
+    "button": false
+  },
+  "edit_predictions": {
+    "provider": "copilot"
+  },
+  "agent": {
+    "default_model": {
+      "provider": "openai-subscribed",
+      "model": "gpt-6.1-sol",
+      "enable_thinking": true,
+      "effort": "medium"
+    },
+    "dock": "right",
+    "threads_sidebar": {
+      "auto_open": false,
+      "position": "right"
+    },
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "project_panel": {
+    "button": true,
+    "dock": "left"
+  },
+ 	"lsp": {
+		"tinymist": {
+			"initialization_options": {
+				"preview": {
+					"background": {
+						"enabled": true,
+					},
+				},
+			},
+
+			"settings": {
+				"exportPdf": "onSave",
+				"outputPath": "$root/$dir/$name",
+
+				"formatterMode": "typstyle",
+			}
+		}
+	},
+}
