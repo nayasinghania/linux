@@ -1,0 +1,109 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+window#waybar {
+    background-color: rgba(30, 30, 46, 1);
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+/* you can set a style on hover for any module like this */
+#pulseaudio:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+#clock,
+#pulseaudio,
+#mpd {
+    padding: 0 10px;
+    color: #ffffff;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#pulseaudio {
+    color: #ffffff;
+}
+
+#pulseaudio.muted {
+    background-color: #90b1b1;
+    color: #2a5c45;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#custom-librewolf,
+#custom-discord,
+#custom-zoom,
+#custom-zed,
+#custom-thunar,
+#custom-bitwig {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 32px 32px;
+    min-width: 32px;
+    min-height: 32px;
+    margin: 4px 4px 4px 4px;
+}
+
+#custom-librewolf {
+    background-image: url("/home/naya/.local/share/icons/candy-icons/apps/scalable/librewolf.svg");
+}
+
+#custom-discord {
+    background-image: url("/home/naya/.local/share/icons/candy-icons/apps/scalable/discord.svg");
+}
+
+#custom-zoom {
+    background-image: url("/home/naya/.local/share/icons/candy-icons/apps/scalable/zoom-desktop.svg");
+}
+
+#custom-zed {
+    background-image: url("/home/naya/.local/share/icons/candy-icons/apps/scalable/zed.svg");
+}
+
+#custom-thunar {
+    background-image: url("/home/naya/.local/share/icons/candy-icons/apps/scalable/org.xfce.thunar.svg");
+}
+
+#custom-bitwig {
+    background-image: url("/home/naya/.local/share/icons/candy-icons/apps/scalable/com.bitwig.BitwigStudio.svg");
+}
+
+
+#custom-librewolf:hover,
+#custom-discord:hover,
+#custom-zoom:hover,
+#custom-zed:hover,
+#custom-thunar:hover,
+#custom-bitwig:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+}

@@ -1,0 +1,77 @@
+// -*- mode: jsonc -*-
+{
+    "height": 36,
+    "spacing": 4,
+
+    "modules-left": [
+        "wlr/taskbar"
+    ],
+
+    "modules-center": [
+        "custom/librewolf",
+        "custom/discord",
+        "custom/zoom",
+        "custom/zed",
+        "custom/thunar",
+        "custom/bitwig"
+    ],
+
+    "modules-right": [
+        "tray",
+        "pulseaudio",
+        "clock"
+    ],
+
+    "custom/librewolf": {
+        "format": " ",
+        "on-click": "librewolf",
+        "tooltip": true,
+        "tooltip-text": "LibreWolf"
+    },
+
+    "custom/discord": {
+        "format": " ",
+        "on-click": "discord",
+        "tooltip": true,
+        "tooltip-text": "Discord"
+    },
+
+    "custom/zoom": {
+        "format": " ",
+        "on-click": "zoom",
+        "tooltip": true,
+        "tooltip-text": "Zoom"
+    },
+
+    "custom/zed": {
+        "format": " ",
+        "on-click": "zeditor",
+        "tooltip": true,
+        "tooltip-text": "Zed"
+    },
+
+    "custom/thunar": {
+        "format": " ",
+        "on-click": "thunar",
+        "tooltip": true,
+        "tooltip-text": "Thunar"
+    },
+
+    "custom/bitwig": {
+        "format": " ",
+        "on-click": "bitwig-studio",
+        "tooltip": true,
+        "tooltip-text": "Bitwig Studio"
+    },
+
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-muted": "Muted ",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "scroll-step": 5
+    }
+}
