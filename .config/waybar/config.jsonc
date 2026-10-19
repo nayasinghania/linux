@@ -15,7 +15,8 @@
         "custom/thunar",
         "custom/librewolf",
         "custom/obsidian",
-        "custom/discord",
+        "custom/webcord",
+        "custom/spotify",
         "custom/zed",
         "custom/zoom",
         "custom/bitwig"
@@ -55,11 +56,11 @@
         "tooltip-text": "Obsidian"
     },
 
-    "custom/discord": {
+    "custom/webcord": {
         "format": " ",
-        "on-click": "uwsm app -- discord",
+        "on-click": "uwsm app -- webcord",
         "tooltip": true,
-        "tooltip-text": "Discord"
+        "tooltip-text": "WebCord"
     },
 
     "custom/zed": {
@@ -67,6 +68,13 @@
         "on-click": "uwsm app -- zeditor",
         "tooltip": true,
         "tooltip-text": "Zed"
+    },
+
+    "custom/spotify": {
+        "format": " ",
+        "on-click": "uwsm app -- spotify",
+        "tooltip": true,
+        "tooltip-text": "Spotify"
     },
 
     "custom/zoom": {
@@ -81,6 +89,11 @@
         "on-click": "uwsm app -- bitwig-studio",
         "tooltip": true,
         "tooltip-text": "Bitwig Studio"
+    },
+
+    "tray": {
+      "icon-size": 20,
+      "spacing": 10
     },
 
     "pulseaudio": {
