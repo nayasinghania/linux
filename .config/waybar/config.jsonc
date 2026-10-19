@@ -57,7 +57,7 @@
         "format": "󰂯",
         "format-on": "󰂯",
         "format-off": "󰂲",
-        "on-click": "blueman-manager"
+        "on-click": "env DMENU_BLUETOOTH_LAUNCHER='fuzzel --dmenu' dmenu-bluetooth"
     },
 
     "network": {
@@ -65,6 +65,6 @@
         "format-disconnected": "󰤭 ",
 
         "tooltip-format-wifi": "{essid}\nSignal: {signalStrength}%",
-        "on-click": "nm-connection-editor"
+        "on-click": "uwsm app -- networkmanager_dmenu"
     }
 }
