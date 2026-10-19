@@ -21,8 +21,12 @@ window#waybar {
     background-image: url("/home/naya/.config/waybar/candy-mono/obsidian.svg");
 }
 
-#custom-discord {
+#custom-webcord {
     background-image: url("/home/naya/.config/waybar/candy-mono/discord.svg");
+}
+
+#custom-spotify {
+    background-image: url("/home/naya/.config/waybar/candy-mono/spotify.svg");
 }
 
 #custom-zed {
@@ -41,7 +45,8 @@ window#waybar {
 #custom-thunar,
 #custom-librewolf,
 #custom-obsidian,
-#custom-discord,
+#custom-webcord,
+#custom-spotify,
 #custom-zed,
 #custom-zoom,
 #custom-bitwig {
@@ -57,7 +62,8 @@ window#waybar {
 #custom-thunar:hover,
 #custom-librewolf:hover,
 #custom-obsidian:hover,
-#custom-discord:hover,
+#custom-webcord:hover,
+#custom-spotify:hover,
 #custom-zed:hover,
 #custom-zoom:hover,
 #custom-bitwig:hover {
