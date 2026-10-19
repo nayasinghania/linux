@@ -1,5 +1,9 @@
 // -*- mode: jsonc -*-
 {
+  "position": "top",
+    "margin-top": 5,
+    "margin-left": 5,
+    "margin-right": 5,
     "height": 36,
     "spacing": 4,
 
@@ -8,70 +12,79 @@
     ],
 
     "modules-center": [
-        "custom/librewolf",
-        "custom/discord",
-        "custom/zoom",
-        "custom/zed",
         "custom/thunar",
+        "custom/librewolf",
+        "custom/obsidian",
+        "custom/discord",
+        "custom/zed",
+        "custom/zoom",
         "custom/bitwig"
     ],
 
     "modules-right": [
-        "tray",
-        "pulseaudio",
-        "clock"
+        "group/right"
     ],
 
-    "custom/librewolf": {
-        "format": " ",
-        "on-click": "librewolf",
-        "tooltip": true,
-        "tooltip-text": "LibreWolf"
-    },
-
-    "custom/discord": {
-        "format": " ",
-        "on-click": "discord",
-        "tooltip": true,
-        "tooltip-text": "Discord"
-    },
-
-    "custom/zoom": {
-        "format": " ",
-        "on-click": "zoom",
-        "tooltip": true,
-        "tooltip-text": "Zoom"
-    },
-
-    "custom/zed": {
-        "format": " ",
-        "on-click": "zeditor",
-        "tooltip": true,
-        "tooltip-text": "Zed"
+    "group/right": {
+        "orientation": "horizontal",
+        "modules": [
+            "tray",
+            "pulseaudio",
+            "clock"
+        ]
     },
 
     "custom/thunar": {
         "format": " ",
-        "on-click": "thunar",
+        "on-click": "uwsm app -- thunar",
         "tooltip": true,
         "tooltip-text": "Thunar"
     },
 
+    "custom/librewolf": {
+        "format": " ",
+        "on-click": "uwsm app -- librewolf",
+        "tooltip": true,
+        "tooltip-text": "LibreWolf"
+    },
+
+    "custom/obsidian": {
+        "format": " ",
+        "on-click": "uwsm app -- obsidian",
+        "tooltip": true,
+        "tooltip-text": "Obsidian"
+    },
+
+    "custom/discord": {
+        "format": " ",
+        "on-click": "uwsm app -- discord",
+        "tooltip": true,
+        "tooltip-text": "Discord"
+    },
+
+    "custom/zed": {
+        "format": " ",
+        "on-click": "uwsm app -- zeditor",
+        "tooltip": true,
+        "tooltip-text": "Zed"
+    },
+
+    "custom/zoom": {
+        "format": " ",
+        "on-click": "uwsm app -- zoom",
+        "tooltip": true,
+        "tooltip-text": "Zoom"
+    },
+
     "custom/bitwig": {
         "format": " ",
-        "on-click": "bitwig-studio",
+        "on-click": "uwsm app -- bitwig-studio",
         "tooltip": true,
         "tooltip-text": "Bitwig Studio"
     },
 
     "pulseaudio": {
-        "format": "{volume}% {icon}",
-        "format-muted": "Muted ",
-        "format-icons": {
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol",
-        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "scroll-step": 5
-    }
+        "format": "{volume}% <span font_family='Font Awesome 7 Free Solid'>\uf028</span>",
+        "on-click": "pavucontrol"
+    },
 }

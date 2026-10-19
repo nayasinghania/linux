@@ -1,109 +1,82 @@
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
 }
 
 window#waybar {
-    background-color: rgba(30, 30, 46, 1);
-    color: #ffffff;
-    transition-property: background-color;
-    transition-duration: .5s;
+    background-color: #CBA6F7;
+    color: #1e1e2e;
+    border-radius: 10px;
 }
 
-window#waybar.hidden {
-    opacity: 0.2;
+#custom-thunar {
+    background-image: url("/home/naya/.config/waybar/candy-mono/org.xfce.thunar.svg");
 }
 
-button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
-    border: none;
-    border-radius: 0;
+#custom-librewolf {
+    background-image: url("/home/naya/.config/waybar/candy-mono/librewolf.svg");
 }
 
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-button:hover {
-    background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
+#custom-obsidian {
+    background-image: url("/home/naya/.config/waybar/candy-mono/obsidian.svg");
 }
 
-/* you can set a style on hover for any module like this */
-#pulseaudio:hover {
-    background-color: #ffffff;
-    color: #000000;
+#custom-discord {
+    background-image: url("/home/naya/.config/waybar/candy-mono/discord.svg");
 }
 
-#clock,
-#pulseaudio,
-#mpd {
-    padding: 0 10px;
-    color: #ffffff;
+#custom-zed {
+    background-image: url("/home/naya/.config/waybar/candy-mono/zed.svg");
 }
 
-label:focus {
-    background-color: #000000;
+#custom-zoom {
+    background-image: url("/home/naya/.config/waybar/candy-mono/zoom-icon.svg");
 }
 
-#pulseaudio {
-    color: #ffffff;
+#custom-bitwig {
+    background-image: url("/home/naya/.config/waybar/candy-mono/com.bitwig.BitwigStudio.svg");
 }
 
-#pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
-}
 
-label:focus {
-    background-color: #000000;
-}
-
-#custom-librewolf,
-#custom-discord,
-#custom-zoom,
-#custom-zed,
 #custom-thunar,
+#custom-librewolf,
+#custom-obsidian,
+#custom-discord,
+#custom-zed,
+#custom-zoom,
 #custom-bitwig {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 32px 32px;
     min-width: 32px;
-    min-height: 32px;
-    margin: 4px 4px 4px 4px;
-}
-
-#custom-librewolf {
-    background-image: url("/home/naya/.local/share/icons/candy-icons/apps/scalable/librewolf.svg");
-}
-
-#custom-discord {
-    background-image: url("/home/naya/.local/share/icons/candy-icons/apps/scalable/discord.svg");
-}
-
-#custom-zoom {
-    background-image: url("/home/naya/.local/share/icons/candy-icons/apps/scalable/zoom-desktop.svg");
-}
-
-#custom-zed {
-    background-image: url("/home/naya/.local/share/icons/candy-icons/apps/scalable/zed.svg");
-}
-
-#custom-thunar {
-    background-image: url("/home/naya/.local/share/icons/candy-icons/apps/scalable/org.xfce.thunar.svg");
-}
-
-#custom-bitwig {
-    background-image: url("/home/naya/.local/share/icons/candy-icons/apps/scalable/com.bitwig.BitwigStudio.svg");
+    padding: 4px;
+    margin: 4px;
 }
 
 
-#custom-librewolf:hover,
-#custom-discord:hover,
-#custom-zoom:hover,
-#custom-zed:hover,
 #custom-thunar:hover,
+#custom-librewolf:hover,
+#custom-obsidian:hover,
+#custom-discord:hover,
+#custom-zed:hover,
+#custom-zoom:hover,
 #custom-bitwig:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-    border-radius: 8px;
+    background-color: gray;
+    border-radius: 10px;
+}
+
+#taskbar,
+#right {
+    background-color: #1e1e2e;
+    color: #ffffff;
+
+    border-radius: 10px;
+    margin: 4px;
+    padding: 4px;
+}
+
+#tray,
+#pulseaudio,
+#clock {
+    padding: 0 10px;
 }
