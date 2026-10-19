@@ -1,6 +1,5 @@
 hl.on("hyprland.start", function()
     hl.exec_cmd("uwsm app -- librewolf")
-    hl.exec_cmd("uwsm app -- nm-applet --indicator")
     hl.exec_cmd("wl-paste --type text --watch cliphist store")
     hl.exec_cmd("wl-paste --type image --watch cliphist store")
 end)
@@ -172,7 +171,7 @@ hl.bind(
 
 local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("uwsm app -- hyprlauncher"))
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("uwsm app -- fuzzel"))
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("uwsm app -- kitty"))
 
 

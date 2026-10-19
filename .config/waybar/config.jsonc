@@ -1,114 +1,43 @@
 // -*- mode: jsonc -*-
 {
-  "position": "top",
-    "margin-top": 5,
-    "margin-left": 5,
-    "margin-right": 5,
-    "margin-bottom": 2,
-    "height": 36,
-    "spacing": 4,
+    "position": "top",
+    "margin-top": 7,
+    "margin-left": 7,
+    "margin-right": 7,
+    "spacing": 3,
 
     "modules-left": [
-        "wlr/taskbar"
+        "wlr/taskbar",
+        "tray",
     ],
 
     "modules-center": [
-        "custom/thunar",
-        "custom/librewolf",
-        "custom/obsidian",
-        "custom/webcord",
-        "custom/spotify",
-        "custom/zed",
-        "custom/zoom",
-        "custom/bitwig"
+      "mpris",
+
     ],
 
     "modules-right": [
-        "mpris",
-
-        "group/right"
+        "pulseaudio",
+        "group/connectivity",
+        "clock"
     ],
 
-    "group/right": {
+    "group/connectivity": {
         "orientation": "horizontal",
         "modules": [
-            "tray",
-            "pulseaudio",
-            "clock"
+            "bluetooth",
+            "network"
         ]
     },
-
-    "custom/thunar": {
-        "format": " ",
-        "on-click": "uwsm app -- thunar",
-        "tooltip": true,
-        "tooltip-text": "Thunar"
-    },
-
-    "custom/librewolf": {
-        "format": " ",
-        "on-click": "uwsm app -- librewolf",
-        "tooltip": true,
-        "tooltip-text": "LibreWolf"
-    },
-
-    "custom/obsidian": {
-        "format": " ",
-        "on-click": "uwsm app -- obsidian",
-        "tooltip": true,
-        "tooltip-text": "Obsidian"
-    },
-
-    "custom/webcord": {
-        "format": " ",
-        "on-click": "uwsm app -- webcord",
-        "tooltip": true,
-        "tooltip-text": "WebCord"
-    },
-
-    "custom/zed": {
-        "format": " ",
-        "on-click": "uwsm app -- zeditor",
-        "tooltip": true,
-        "tooltip-text": "Zed"
-    },
-
-    "custom/spotify": {
-        "format": " ",
-        "on-click": "uwsm app -- spotify",
-        "tooltip": true,
-        "tooltip-text": "Spotify"
-    },
-
-    "custom/zoom": {
-        "format": " ",
-        "on-click": "uwsm app -- zoom",
-        "tooltip": true,
-        "tooltip-text": "Zoom"
-    },
-
-    "custom/bitwig": {
-        "format": " ",
-        "on-click": "uwsm app -- bitwig-studio",
-        "tooltip": true,
-        "tooltip-text": "Bitwig Studio"
-    },
-
 
     "mpris": {
         "format": "{status_icon} {title} - {artist}",
         "format-paused": "{status_icon} {title} - {artist}",
         "status-icons": {
-            "playing": "⏸",
-            "paused": "▶",
-            "stopped": "■"
+            "playing": "",
+            "paused": "",
+            "stopped": ""
         },
-        "player-icons": {
-            "default": "♫",
-            "spotify": "",
-            "firefox": ""
-        },
-        "max-length": 40,
         "tooltip-format": "{player}\n{artist{title}",
         "on-click": "play-pause",
         "on-click-middle": "previous",
@@ -116,12 +45,26 @@
     },
 
     "tray": {
-      "icon-size": 20,
-      "spacing": 10
+      "icon-size": 16,
+      "spacing": 8
     },
 
     "pulseaudio": {
-        "format": "{volume}% <span font_family='Font Awesome 7 Free Solid'>\uf028</span>",
+        "format": "{volume}%  ",
         "on-click": "pavucontrol"
     },
+    "bluetooth": {
+        "format": "󰂯",
+        "format-on": "󰂯",
+        "format-off": "󰂲",
+        "on-click": "blueman-manager"
+    },
+
+    "network": {
+        "format-wifi": "󰤨 ",
+        "format-disconnected": "󰤭 ",
+
+        "tooltip-format-wifi": "{essid}\nSignal: {signalStrength}%",
+        "on-click": "nm-connection-editor"
+    }
 }

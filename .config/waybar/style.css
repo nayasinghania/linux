@@ -1,101 +1,26 @@
 * {
-    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-family: "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
     font-size: 14px;
-}
-
-window#waybar {
-    background-color: #CBA6F7;
-    color: #1e1e2e;
-    border-radius: 10px;
-}
-
-#custom-thunar {
-    background-image: url("/home/naya/.config/waybar/candy-mono/org.xfce.thunar.svg");
-}
-
-#custom-librewolf {
-    background-image: url("/home/naya/.config/waybar/candy-mono/librewolf.svg");
-}
-
-#custom-obsidian {
-    background-image: url("/home/naya/.config/waybar/candy-mono/obsidian.svg");
-}
-
-#custom-webcord {
-    background-image: url("/home/naya/.config/waybar/candy-mono/discord.svg");
-}
-
-#custom-spotify {
-    background-image: url("/home/naya/.config/waybar/candy-mono/spotify.svg");
-}
-
-#custom-zed {
-    background-image: url("/home/naya/.config/waybar/candy-mono/zed.svg");
-}
-
-#custom-zoom {
-    background-image: url("/home/naya/.config/waybar/candy-mono/zoom-icon.svg");
-}
-
-#custom-bitwig {
-    background-image: url("/home/naya/.config/waybar/candy-mono/com.bitwig.BitwigStudio.svg");
-}
-
-
-#custom-thunar,
-#custom-librewolf,
-#custom-obsidian,
-#custom-webcord,
-#custom-spotify,
-#custom-zed,
-#custom-zoom,
-#custom-bitwig {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 32px 32px;
-    min-width: 32px;
-    padding: 4px;
-    margin: 4px;
-}
-
-
-#custom-thunar:hover,
-#custom-librewolf:hover,
-#custom-obsidian:hover,
-#custom-webcord:hover,
-#custom-spotify:hover,
-#custom-zed:hover,
-#custom-zoom:hover,
-#custom-bitwig:hover {
-    background-color: gray;
-    border-radius: 10px;
 }
 
 #taskbar,
 #mpris,
-#right {
-    background-color: #1e1e2e;
-    color: #ffffff;
-
-    border-radius: 10px;
-    margin-top: 4px;
-    margin-bottom: 4px;
-    padding: 4px;
-}
-
-#taskbar {
-    margin-left: 4px;
-    margin-right: 4px;
-}
-
-#right {
-    margin-left: 2px;
-    margin-right: 4px;
-}
-
-#mpris,
 #tray,
 #pulseaudio,
+#connectivity,
 #clock {
-    padding: 0 10px;
+    background-color: #1e1e2e;
+    border: 2px solid #CBA6F7;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 0px 8px;
+}
+
+#taskbar button {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+#network {
+    padding-left: 8px;
 }
