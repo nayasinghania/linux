@@ -72,15 +72,28 @@ window#waybar {
 }
 
 #taskbar,
+#mpris,
 #right {
     background-color: #1e1e2e;
     color: #ffffff;
 
     border-radius: 10px;
-    margin: 4px;
+    margin-top: 4px;
+    margin-bottom: 4px;
     padding: 4px;
 }
 
+#taskbar {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+#right {
+    margin-left: 2px;
+    margin-right: 4px;
+}
+
+#mpris,
 #tray,
 #pulseaudio,
 #clock {

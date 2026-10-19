@@ -4,6 +4,7 @@
     "margin-top": 5,
     "margin-left": 5,
     "margin-right": 5,
+    "margin-bottom": 2,
     "height": 36,
     "spacing": 4,
 
@@ -23,6 +24,8 @@
     ],
 
     "modules-right": [
+        "mpris",
+
         "group/right"
     ],
 
@@ -89,6 +92,27 @@
         "on-click": "uwsm app -- bitwig-studio",
         "tooltip": true,
         "tooltip-text": "Bitwig Studio"
+    },
+
+
+    "mpris": {
+        "format": "{status_icon} {title} - {artist}",
+        "format-paused": "{status_icon} {title} - {artist}",
+        "status-icons": {
+            "playing": "⏸",
+            "paused": "▶",
+            "stopped": "■"
+        },
+        "player-icons": {
+            "default": "♫",
+            "spotify": "",
+            "firefox": ""
+        },
+        "max-length": 40,
+        "tooltip-format": "{player}\n{artist{title}",
+        "on-click": "play-pause",
+        "on-click-middle": "previous",
+        "on-click-right": "next"
     },
 
     "tray": {

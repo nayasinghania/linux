@@ -29,13 +29,13 @@ hl.config({
 hl.config({
     general = {
         gaps_in  = 5,
-        gaps_out = 5,
+        gaps_out = 7,
 
         border_size = 2,
 
         col = {
-            active_border   = { colors = {"rgba(ffffffaa)", "rgba(ffffffaa)"}, angle = 45 },
-            inactive_border = "rgba(1e1e2eaa)",
+            active_border   = { colors = {"rgba(203, 166, 247, 1)", "rgba(203, 166, 247, 1)"}, angle = 45 },
+            inactive_border = "rgba(30, 30, 46, 1)",
         },
 
         layout = "dwindle",
@@ -45,26 +45,6 @@ hl.config({
         rounding       = 10,
         rounding_power = 2,
 
-        active_opacity   = 1.0,
-        inactive_opacity = 1.0,
-
-        shadow = {
-            enabled      = true,
-            range        = 4,
-            render_power = 3,
-            color        = 0xee1a1a1a,
-        },
-
-        blur = {
-            enabled   = true,
-            size      = 3,
-            passes    = 1,
-            vibrancy  = 0.1696,
-        },
-    },
-
-    animations = {
-        enabled = true,
     },
 })
 
@@ -97,7 +77,7 @@ hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "
 
 hl.config({
     dwindle = {
-        preserve_split = true, -- You probably want this
+        preserve_split = true
     },
 })
 
@@ -125,7 +105,6 @@ hl.config({
     },
 })
 
-
 ---------------
 ---- INPUT ----
 ---------------
@@ -140,7 +119,7 @@ hl.config({
 
         follow_mouse = 1,
 
-        sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
+        sensitivity = 0,
 
         touchpad = {
             natural_scroll = false,
@@ -148,23 +127,16 @@ hl.config({
     },
 })
 
-hl.gesture({
-    fingers = 3,
-    direction = "horizontal",
-    action = "workspace"
-})
-
 hl.device({
     name        = "epic-mouse-v1",
     sensitivity = -0.5,
 })
 
-
 ---------------------
 ---- KEYBINDINGS ----
 ---------------------
 
-local mainMod = "SUPER" -- Sets "Windows" key as main modifier
+local mainMod = "SUPER"
 
 hl.bind(mainMod .. " + X", function ()
     if hl.get_workspace("special:minimized") then
@@ -234,7 +206,6 @@ local suppressMaximizeRule = hl.window_rule({
 })
 
 hl.window_rule({
-    -- Fix some dragging issues with XWayland
     name  = "fix-xwayland-drags",
     match = {
         class      = "^$",
