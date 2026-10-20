@@ -57,14 +57,20 @@
         "format": "󰂯",
         "format-on": "󰂯",
         "format-off": "󰂲",
+        "tooltip-format": "{status}",
         "on-click": "env DMENU_BLUETOOTH_LAUNCHER='fuzzel --dmenu' dmenu-bluetooth"
+
     },
 
     "network": {
         "format-wifi": "󰤨 ",
         "format-disconnected": "󰤭 ",
-
         "tooltip-format-wifi": "{essid}\nSignal: {signalStrength}%",
         "on-click": "uwsm app -- networkmanager_dmenu"
+    },
+    "clock": {
+    	"interval": 60,
+    	"format": "{:%H:%M}",
+      "tooltip-format": "{:%Y-%m-%d}",
     }
 }
