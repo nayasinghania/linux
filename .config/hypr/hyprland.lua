@@ -7,18 +7,11 @@ hl.config({
 		preserve_split = true,
 	},
 
-	master = {
-		new_status = "master",
-	},
-
-	scrolling = {
-		fullscreen_on_one_column = true,
-	},
-
 	general = {
 		gaps_in = 5,
 		gaps_out = 7,
-		border_size = 2,
+        border_size = 2,
+        resize_on_border = true,
 
 		col = {
 			active_border = {
@@ -57,8 +50,8 @@ hl.config({
 
 hl.on("hyprland.start", function()
 	hl.exec_cmd("uwsm app -- librewolf")
-	hl.exec_cmd("wl-paste --type text --watch cliphist store")
-	hl.exec_cmd("wl-paste --type image --watch cliphist store")
+	hl.exec_cmd("uwsm app -- wl-paste --type text --watch cliphist store")
+	hl.exec_cmd("uwsm app wl-paste --type image --watch cliphist store")
 end)
 
 ------------------
@@ -76,37 +69,25 @@ hl.monitor({
 ---- CURVES ----
 ----------------
 
-hl.curve("easeOutQuint", { type = "bezier", points = { { 0.23, 1 }, { 0.32, 1 } } })
-hl.curve("easeInOutCubic", { type = "bezier", points = { { 0.65, 0.05 }, { 0.36, 1 } } })
-hl.curve("linear", { type = "bezier", points = { { 0, 0 }, { 1, 1 } } })
-hl.curve("almostLinear", { type = "bezier", points = { { 0.5, 0.5 }, { 0.75, 1 } } })
-hl.curve("quick", { type = "bezier", points = { { 0.15, 0 }, { 0.1, 1 } } })
-hl.curve("easy", { type = "spring", mass = 1, stiffness = 238.1191, dampening = 24.21279333 })
+hl.curve("almostLinear", {
+    type = "bezier",
+    points = { { 0.5, 0.5 }, { 0.75, 1 } }
+})
 
 --------------------
 ---- ANIMATIONS ----
 --------------------
 
-hl.animation({ leaf = "global", enabled = true, speed = 10, bezier = "default" })
-hl.animation({ leaf = "border", enabled = true, speed = 5.39, bezier = "easeOutQuint" })
-hl.animation({ leaf = "windows", enabled = true, speed = 4.79, spring = "easy" })
-hl.animation({ leaf = "windowsIn", enabled = true, speed = 4.1, spring = "easy", style = "popin 87%" })
-hl.animation({ leaf = "windowsOut", enabled = true, speed = 1.49, bezier = "linear", style = "popin 87%" })
-hl.animation({ leaf = "fadeIn", enabled = true, speed = 1.73, bezier = "almostLinear" })
-hl.animation({ leaf = "fadeOut", enabled = true, speed = 1.46, bezier = "almostLinear" })
-hl.animation({ leaf = "fade", enabled = true, speed = 3.03, bezier = "quick" })
-hl.animation({ leaf = "layers", enabled = true, speed = 3.81, bezier = "easeOutQuint" })
-hl.animation({ leaf = "layersIn", enabled = true, speed = 4, bezier = "easeOutQuint", style = "fade" })
-hl.animation({ leaf = "layersOut", enabled = true, speed = 1.5, bezier = "linear", style = "fade" })
-hl.animation({ leaf = "fadeLayersIn", enabled = true, speed = 1.79, bezier = "almostLinear" })
-hl.animation({ leaf = "fadeLayersOut", enabled = true, speed = 1.39, bezier = "almostLinear" })
-hl.animation({ leaf = "workspaces", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesIn", enabled = true, speed = 1.21, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" })
+hl.animation({ leaf = "global", enabled = true, speed = 1, bezier = "linear" })
+hl.animation({
+    leaf = "windowsMove",
+    enabled = true,
+    speed = 3,
+    bezier = "almostLinear",
+})
 
 -------------------------------
----- KEYBOARD KEY BINDINGS ----
+---- KEY BINDINGS ----
 -------------------------------
 
 local mainMod = "SUPER"
@@ -129,9 +110,9 @@ hl.bind(mainMod .. " + X", function()
 end)
 
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp)" - | swappy -f -'))
-hl.bind("CTRL + SHIFT + V", hl.dsp.exec_cmd("cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"))
+hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd("cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"))
 
-hl.bind("HOME", hl.dsp.exec_cmd("loginctl lock-session && systemctl suspend"))
+hl.bind("XF86Tools", hl.dsp.exec_cmd("systemctl suspend"))
 
 ------------------------
 ---- MOUSE BINDINGS ----
@@ -171,13 +152,21 @@ hl.bind(
 	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
 	{ locked = true, repeating = true }
 )
-hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
+hl.bind(
+    "XF86AudioPause",
+    hl.dsp.exec_cmd("playerctl play-pause"),
+    { locked = true }
+)
+hl.bind(
+    "XF86AudioPlay",
+    hl.dsp.exec_cmd("playerctl play-pause"),
+    { locked = true }
+)
 
 -----------------------
----- WINDOWS RULES ----
+---- WINDOW RULES ----
 -----------------------
-
+---
 hl.window_rule({
 	name = "suppress-maximize-events",
 	match = { class = ".*" },
@@ -197,12 +186,4 @@ hl.window_rule({
 	},
 
 	no_focus = true,
-})
-
-hl.window_rule({
-	name = "move-hyprland-run",
-	match = { class = "hyprland-run" },
-
-	move = "20 monitor_h-120",
-	float = true,
 })

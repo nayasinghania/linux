@@ -5,23 +5,20 @@
     "margin-left": 7,
     "margin-right": 7,
     "spacing": 3,
-
     "modules-left": [
         "wlr/taskbar",
         "tray",
     ],
-
     "modules-center": [
       "mpris",
 
     ],
-
     "modules-right": [
         "pulseaudio",
         "group/connectivity",
-        "clock"
+        "clock#time",
+        "clock#date"
     ],
-
     "group/connectivity": {
         "orientation": "horizontal",
         "modules": [
@@ -29,7 +26,10 @@
             "network"
         ]
     },
-
+    "tray": {
+      "icon-size": 16,
+      "spacing": 8
+    },
     "mpris": {
         "format": "{status_icon} {title} - {artist}",
         "format-paused": "{status_icon} {title} - {artist}",
@@ -39,16 +39,7 @@
             "stopped": ""
         },
         "tooltip-format": "{player}\n{artist{title}",
-        "on-click": "play-pause",
-        "on-click-middle": "previous",
-        "on-click-right": "next"
     },
-
-    "tray": {
-      "icon-size": 16,
-      "spacing": 8
-    },
-
     "pulseaudio": {
         "format": "{volume}%  ",
         "on-click": "pavucontrol"
@@ -57,9 +48,9 @@
         "format": "󰂯",
         "format-on": "󰂯",
         "format-off": "󰂲",
-        "tooltip-format": "{status}",
+        "tooltip-format": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
         "on-click": "env DMENU_BLUETOOTH_LAUNCHER='fuzzel --dmenu' dmenu-bluetooth"
-
     },
 
     "network": {
@@ -68,9 +59,11 @@
         "tooltip-format-wifi": "{essid}\nSignal: {signalStrength}%",
         "on-click": "uwsm app -- networkmanager_dmenu"
     },
-    "clock": {
+    "clock#time": {
     	"interval": 60,
     	"format": "{:%H:%M}",
-      "tooltip-format": "{:%Y-%m-%d}",
-    }
+    },
+    "clock#date": {
+    	"interval": 60,
+     "format": "{:%B %d}"    }
 }
