@@ -1,4 +1,5 @@
 {
+  "preferred_line_length": 100,
   "cli_default_open_behavior": "new_window",
   "toolbar": {
     "quick_actions": false,
@@ -26,7 +27,7 @@
   "agent": {
     "default_model": {
       "provider": "openai-subscribed",
-      "model": "gpt-6.1-sol",
+      "model": "gpt-5.6-sol",
       "enable_thinking": true,
       "effort": "medium"
     },

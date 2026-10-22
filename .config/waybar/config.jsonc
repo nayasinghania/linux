@@ -26,8 +26,11 @@
             "network"
         ]
     },
+    "wlr/taskbar": {
+      "icon-size": 20,
+    },
     "tray": {
-      "icon-size": 16,
+      "icon-size": 20,
       "spacing": 8
     },
     "mpris": {

@@ -40,7 +40,8 @@ hl.config({
 	misc = {
 		disable_hyprland_logo = true,
 		disable_splash_rendering = true,
-		background_color = "#1E1E2E",
+        background_color = "#1E1E2E",
+		font_family = "Noto Sans"
 	},
 })
 
@@ -62,7 +63,7 @@ hl.monitor({
 	output = "",
 	mode = "3440x1440@60",
 	position = "0x0",
-	scale = "1.25",
+	scale = "1.33",
 })
 
 ----------------

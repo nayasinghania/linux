@@ -1,0 +1,16 @@
+export QT_SCALE_FACTOR=1.33
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
+
+export ELECTRON_OZONE_PLATFORM_HINT=wayland
+
+export LIBVA_DRIVER_NAME=nvidia
+export __GLX_VENDOR_LIBRARY_NAME=nvidia
+
+export ELECTRON_OZONE_PLATFORM_HINT=auto
+
+export HYPRCURSOR_THEME=rose-pine-hyprcursor
+export HYPRCURSOR_SIZE=32
+
+export XCURSOR_THEME=BreezeX-RosePine-Linux
+export XCURSOR_SIZE=32
+export XCURSOR_PATH=/home/naya/.local/share/icons:/usr/share/icons
