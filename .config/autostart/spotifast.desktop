@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Spotifast
+Exec=/usr/bin/spotifast --start-hidden
+Icon=spotifast
+Terminal=false
+X-GNOME-Autostart-enabled=true

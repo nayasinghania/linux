@@ -16,13 +16,13 @@ hl.config({
 		col = {
 			active_border = {
 				colors = {
-					"rgba(203, 166, 247, 1)",
-					"rgba(203, 166, 247, 1)",
+					"rgb(180, 190, 254)",
+					"rgb(180, 190, 254)",
 				},
 				angle = 45,
 			},
 
-			inactive_border = "rgba(30, 30, 46, 1)",
+			inactive_border = "rgb(30, 30, 46)",
 		},
 
 		layout = "dwindle",
@@ -41,7 +41,7 @@ hl.config({
 		disable_hyprland_logo = true,
 		disable_splash_rendering = true,
         background_color = "#1E1E2E",
-		font_family = "Noto Sans"
+        font_family = "Noto Sans",
 	},
 })
 
@@ -87,9 +87,9 @@ hl.animation({
     bezier = "almostLinear",
 })
 
--------------------------------
+----------------------
 ---- KEY BINDINGS ----
--------------------------------
+----------------------
 
 local mainMod = "SUPER"
 
@@ -120,7 +120,20 @@ hl.bind("XF86Tools", hl.dsp.exec_cmd("systemctl suspend"))
 ------------------------
 
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
+
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+
+hl.bind(
+    "mouse_left",
+    hl.dsp.exec_cmd("playerctl previous"),
+    { locked = true }
+)
+
+hl.bind(
+    "mouse_right",
+    hl.dsp.exec_cmd("playerctl next"),
+    { locked = true }
+)
 
 ---------------------------------------
 ---- MEDIA AND BRIGHTNESS BINDINGS ----
@@ -164,10 +177,66 @@ hl.bind(
     { locked = true }
 )
 
------------------------
+----------------------
 ---- WINDOW RULES ----
------------------------
----
+----------------------
+
+local t_gap = 52
+local b_gap = 9
+local l_gap = 9
+
+local r_gap = "monitor_w-window_w-" .. l_gap
+local t_r_gap = r_gap .. " " .. t_gap
+
+local max_h = "monitor_h-" .. t_gap .. "-" .. b_gap
+
+local big_horizontal_window = "1000 " .. max_h
+local small_window = "750 500"
+
+hl.window_rule({
+    name = "discord-float",
+    match = {
+        class = "discord",
+    },
+    float = true,
+    min_size = big_horizontal_window,
+    max_size = big_horizontal_window,
+    move = "400 " .. t_gap
+})
+
+hl.window_rule({
+    name = "spotifast-float",
+    match = {
+        class = "spotifast",
+    },
+    float = true,
+    min_size = big_horizontal_window,
+    max_size = big_horizontal_window,
+    move = "250 " .. t_gap
+})
+
+hl.window_rule({
+    name = "syncthingtray-float",
+    match = {
+        class = "syncthingtray",
+    },
+    float = true,
+    min_size = big_horizontal_window,
+    max_size = big_horizontal_window,
+    move = "100 " .. t_gap
+})
+
+hl.window_rule({
+    name = "pavucontrol-float",
+    match = {
+        class = "org.pulseaudio.pavucontrol",
+    },
+    float = true,
+    min_size = small_window,
+    max_size = small_window,
+    move = t_r_gap,
+})
+
 hl.window_rule({
 	name = "suppress-maximize-events",
 	match = { class = ".*" },
