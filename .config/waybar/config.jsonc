@@ -11,7 +11,6 @@
     ],
     "modules-center": [
       "mpris",
-
     ],
     "modules-right": [
         "pulseaudio",
@@ -28,10 +27,12 @@
     },
     "wlr/taskbar": {
       "icon-size": 20,
+      "icon-theme": "candy-icons",
+      "on-click": "activate"
     },
     "tray": {
       "icon-size": 20,
-      "spacing": 8
+      "spacing": 8,
     },
     "mpris": {
         "format": "{status_icon} {title} - {artist}",
@@ -63,10 +64,13 @@
         "on-click": "uwsm app -- networkmanager_dmenu"
     },
     "clock#time": {
-    	"interval": 60,
-    	"format": "{:%H:%M}",
+       	"interval": 60,
+       	"format": "{:%H:%M}",
+        "tooltip-format": "{:%H:%M %Z}"
     },
     "clock#date": {
-    	"interval": 60,
-     "format": "{:%B %d}"    }
+       	"interval": 60,
+        "format": "{:%d %B}",
+        "tooltip-format": "{:%Y-%m-%d}"
+    }
 }
